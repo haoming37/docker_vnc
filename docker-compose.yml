@@ -1,0 +1,18 @@
+version: "2.4"
+
+services:
+    vnc:
+        build: 
+            context: base
+            dockerfile: ./Dockerfile
+#            args:
+#                - http_proxy $http_proxy
+#                - https_proxy $https_proxy
+#
+        user: "1000:1000"
+        ports:
+            - "5900:5900"
+        volumes:
+            - "./WORK:/WORK"
+        environment:
+            - LC_ALL=C.UTF-8
